@@ -207,12 +207,11 @@ Until then the site is reachable at `latencyenforcement.pages.dev`.
 ### Related
 
 The Bureau is a division of
-[Best Effort Industries](https://besteffortindustries.com) and is
-registered as division 014 in the operating divisions table in that
-repository's `index.html`. The site footer's document number, BEI-010,
-predates the registration and does not match; the discrepancy has been
-audited and found to respect the speed of light, which exhausts the
-Bureau's remit.
+[Best Effort Industries](https://besteffortindustries.com), currently
+queued in that register's Schedule B under a provisional number. Real
+division numbers are assigned by the register on entry into service and
+are recorded nowhere else; the Bureau holds no opinion on queue
+positions, only on arrival times.
 
 ## License
 
