@@ -1,0 +1,13 @@
+<!-- Source for assets/logo.svg. Text is still live here; `make logo` runs
+     Inkscape with export-text-to-path so the committed logo does not depend
+     on the viewer's fonts. The wordmark is set in Georgia, which is
+     installed on this machine (see the README's font note). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 400" width="1240" height="400" role="img" aria-label="Bureau of Latency Enforcement">
+  <rect width="1240" height="400" fill="#171d26"/>
+  <rect x="0" y="392" width="1240" height="8" fill="#a51c1c"/>
+  <text x="620" y="104" text-anchor="middle" font-family="Liberation Sans, Arial, sans-serif" font-weight="bold" font-size="22" letter-spacing="14" fill="#8f9aa8">BUREAU OF</text>
+  <text x="620" y="212" text-anchor="middle" font-family="Georgia, serif" font-size="92" fill="#ffffff">Latency Enforcement</text>
+  <line x1="470" y1="252" x2="770" y2="252" stroke="#a51c1c" stroke-width="4"/>
+  <text x="620" y="312" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="28" fill="#8f9aa8">The speed of light is the law.</text>
+  <text x="620" y="360" text-anchor="middle" font-family="Liberation Sans, Arial, sans-serif" font-weight="bold" font-size="17" letter-spacing="5" fill="#b9962e">STATUTE 299,792,458 &#183; COMPLIANCE RATE: 100%</text>
+</svg>

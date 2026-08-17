@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The speed of light is the law. Minimum lawful latency rulings and benchmark audits from the only regulator in history with a 100 percent compliance rate.">
+<meta name="robots" content="index, follow">
+
+<!-- PRODUCTION DOMAIN, hardcoded. latencyenforcement.org is a candidate, not
+     purchased. If the site lands elsewhere, change the four absolute URLs
+     below and the footer of tools/og.html, then re-run `make og`. Those are
+     the only two files that name it; nothing derives it. -->
+<link rel="canonical" href="https://latencyenforcement.org/">
+<meta name="theme-color" content="#171d26">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bureau of Latency Enforcement">
+<meta property="og:url" content="https://latencyenforcement.org/">
+<meta property="og:title" content="Bureau of Latency Enforcement">
+<meta property="og:description" content="The speed of light is the law. Every ping obeys.">
+<meta property="og:image" content="https://latencyenforcement.org/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bureau of Latency Enforcement: agency wordmark in white serif on dark slate above a red rule, with the motto The Speed of Light Is the Law.">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bureau of Latency Enforcement">
+<meta name="twitter:description" content="The speed of light is the law. Every ping obeys.">
+<meta name="twitter:image" content="https://latencyenforcement.org/og.png">
+<meta name="twitter:image:alt" content="Bureau of Latency Enforcement: agency wordmark in white serif on dark slate above a red rule, with the motto The Speed of Light Is the Law.">
+<title>Bureau of Latency Enforcement | The Speed of Light Is the Law</title>
+<style>
+  :root{
+    --slate:#232b36; --slate-deep:#171d26; --paper:#f4f5f7; --ink:#1d232b;
+    --red:#a51c1c; --gold:#b9962e; --muted:#5d6773; --line:#d5dae0; --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--white);color:var(--ink);line-height:1.55}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  a{color:var(--slate)}
+  button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+  .govbar{background:var(--paper);border-bottom:1px solid var(--line);font-size:12px;color:#5d6773;padding:7px 0}
+  .govbar .wrap{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .govbar .status{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3d4551;font-weight:700;white-space:nowrap}
+  .govbar .dot{width:7px;height:7px;border-radius:50%;background:#2e7d3a;box-shadow:0 0 0 3px rgba(46,125,58,.16)}
+  header{background:var(--slate-deep);color:#fff;padding:26px 0;border-bottom:4px solid var(--red)}
+  header .wrap{display:flex;gap:16px;align-items:center}
+  .seal{height:90px;width:auto;max-height:22vw;min-height:64px;flex:none;mix-blend-mode:lighten}
+  .agency small{display:block;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#8f9aa8;margin-bottom:2px}
+  .agency b{font-family:Georgia,serif;font-size:26px;line-height:1.1;display:block}
+  .agency i{display:block;font-size:12.5px;color:#8f9aa8;font-style:italic;margin-top:6px;line-height:1.5}
+
+  .bulletin{background:var(--slate);border-bottom:1px solid #313a47}
+  .bulletin .grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .bulletin .cell{padding:11px 18px;border-left:1px solid #313a47}
+  .bulletin .cell:first-child{border-left:0;padding-left:0}
+  .bulletin .k{display:block;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#7d8794}
+  .bulletin .v{display:block;font-size:12.5px;color:#dbe1e8;margin-top:3px}
+  .bulletin .cell:first-child .v{color:var(--gold);font-weight:700;letter-spacing:.06em}
+  @media(max-width:640px){
+    .govbar .wrap{display:block}
+    .govbar .status{margin-left:0;margin-top:6px;justify-content:flex-start}
+    .bulletin .grid{grid-template-columns:1fr}
+    .bulletin .cell{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+      border-left:0;border-top:1px solid #313a47;padding:9px 0}
+    .bulletin .cell:first-child{border-top:0}
+    .bulletin .k{flex:none}
+    .bulletin .v{margin-top:0;text-align:right}
+  }
+  .hero{background:var(--paper);border-bottom:1px solid var(--line);padding:46px 0 42px}
+  .hero h1{font-size:clamp(26px,5vw,38px);max-width:620px}
+  .hero p{margin-top:12px;color:var(--muted);max-width:620px;font-size:16px}
+  .statute{margin-top:22px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);padding:16px 18px;font-size:14px;max-width:640px}
+  .statute b{font-family:Georgia,serif}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:800}
+  section h2{font-size:26px;margin:6px 0 8px}
+  section p.intro{color:var(--muted);max-width:620px}
+
+  .calc{margin-top:22px;background:var(--paper);border:1px solid var(--line);padding:24px}
+  .calc .row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+  .field{flex:1;min-width:180px}
+  .field label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-weight:700}
+  select,input[type=number]{width:100%;font:inherit;font-size:15px;padding:10px 12px;border:1px solid #9aa3ad;background:#fff}
+  button{font:inherit;font-weight:800;letter-spacing:.04em;background:var(--slate);color:#fff;border:0;padding:12px 24px;cursor:pointer}
+  button:hover{background:#33404f}
+  .ruling{margin-top:20px;display:none}
+  .ruling.show{display:block}
+  .rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .rgrid div{background:#fff;padding:14px 16px}
+  .rgrid b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
+  .rgrid span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .rnote{margin-top:12px;font-size:13px;color:var(--muted);max-width:640px}
+
+  .audit{margin-top:26px;border-top:1px dashed var(--line);padding-top:22px}
+  .audit h3{font-size:18px;margin-bottom:6px}
+  .audit p{font-size:14px;color:var(--muted);max-width:600px}
+  .verdict{margin-top:14px;padding:16px;border-left:5px solid;display:none;background:#fff;font-size:14px}
+  .verdict.ok{border-color:#2e7d3a;display:block}
+  .verdict.bad{border-color:var(--red);display:block}
+  .verdict b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+
+  .case{margin-top:22px;background:var(--paper);border:1px solid var(--line);padding:22px;max-width:680px}
+  .case .no{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .case h3{font-size:19px;margin:4px 0 8px}
+  .case p{font-size:14.5px;color:#39424c;margin-top:8px}
+
+  details{border:1px solid var(--line);border-bottom:0}
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{padding:14px 16px;font-weight:700;cursor:pointer}
+  summary:hover{background:var(--paper)}
+  details p{padding:0 16px 16px;color:var(--muted);max-width:680px;font-size:14.5px}
+
+  footer{padding:32px 0 48px;font-size:12px;color:var(--muted);background:var(--paper)}
+  footer .doc{letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+  footer p{margin-top:8px;max-width:720px}
+</style>
+</head>
+<body>
+
+<div class="govbar">
+  <div class="wrap">
+    <div>An official website of the Bureau of Latency Enforcement</div>
+    <div class="status"><span class="dot" aria-hidden="true"></span>Compliance rate: 100% (universe-wide)</div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <img class="seal" alt="Bureau of Latency Enforcement badge: a shield reading Latency Enforcement above a laurel-ringed gauge with the motto Speed of Light Is the Law and a ribbon reading Est. T = 0" src="data:image/webp;base64,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">
+    <div class="agency">
+      <small>Bureau of</small>
+      <b>Latency Enforcement</b>
+      <i>The speed of light is the law.<br>You cannot outrun it, and there is nowhere it does not reach.</i>
+    </div>
+  </div>
+</header>
+
+<div class="bulletin">
+  <div class="wrap grid">
+    <div class="cell"><span class="k">Bulletin</span><span class="v">1.5 / standing</span></div>
+    <div class="cell"><span class="k">Effective</span><span class="v">T = 0, retroactively</span></div>
+    <div class="cell"><span class="k">Jurisdiction</span><span class="v">The observable universe</span></div>
+    <div class="cell"><span class="k">Violations recorded</span><span class="v">None to date</span></div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Every ping obeys. The Bureau makes sure of it.</h1>
+    <p>Light in optical fiber travels at roughly 200,000 kilometers per second, about two thirds of its vacuum speed. This sets a hard minimum on every network round trip on Earth. It is the only regulation in history with a 100 percent enforcement rate, zero staff, and no budget. The Bureau exists to take credit for this.</p>
+    <div class="statute">
+      <b>Statute 299,792,458 § 1.5:</b> No packet shall arrive before it physically can. Penalties for violation: not applicable, as violation is not applicable. Claims of violation are prosecuted under § 2 (Fraud, Benchmarketing).
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Compliance instrument BLE-1</div>
+    <h2>Minimum lawful latency calculator</h2>
+    <p class="intro">Select two locations. The Bureau will compute the lowest round-trip time physics permits over a straight fiber path, and what you should actually expect, given that fiber is never straight and routers exist.</p>
+    <div class="calc">
+      <div class="row">
+        <div class="field">
+          <label for="cityA">Endpoint A</label>
+          <select id="cityA"></select>
+        </div>
+        <div class="field">
+          <label for="cityB">Endpoint B</label>
+          <select id="cityB"></select>
+        </div>
+        <button id="calcBtn">Issue ruling</button>
+      </div>
+
+      <div class="ruling" id="ruling">
+        <div class="rgrid">
+          <div><b id="rDist">-</b><span>Great-circle distance</span></div>
+          <div><b id="rMin">-</b><span>Minimum lawful RTT</span></div>
+          <div><b id="rTyp">-</b><span>Typical observed RTT</span></div>
+        </div>
+        <p class="rnote" id="rNote"></p>
+      </div>
+
+      <div class="audit">
+        <h3>Report a suspected violation</h3>
+        <p>Has a vendor, colleague, or benchmark claimed a round-trip time between these endpoints? Enter it below. The Bureau will determine whether physics was consulted.</p>
+        <div class="row" style="margin-top:12px">
+          <div class="field" style="max-width:220px">
+            <label for="claimed">Claimed RTT (ms)</label>
+            <input type="number" id="claimed" min="0" step="0.1" placeholder="e.g. 3.5">
+          </div>
+          <button id="auditBtn">Audit claim</button>
+        </div>
+        <div class="verdict" id="auditVerdict"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Enforcement record</div>
+    <h2>Landmark case</h2>
+    <div class="case">
+      <div class="no">Case BLE-1996-500MI · CLOSED · PHYSICS UPHELD</div>
+      <h3>In re: The 500-Mile Email</h3>
+      <p>A university statistics department reported that email could not be sent farther than 500 miles. Investigation confirmed the report was accurate. A misconfigured server was timing out connections after roughly 3 milliseconds, and 3 light-milliseconds is, indeed, about 500 miles. The mail server had accidentally become a speed-of-light measurement instrument.</p>
+      <p>The Bureau notes this is a true story from 1996, documented by the sysadmin involved, and considers it the finest latency enforcement action ever taken. The Bureau took no part in it, which is consistent with the Bureau's operating model.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Public guidance</div>
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I appeal the speed of light?</summary>
+      <p>Appeals may be filed with the universe directly. To date, all appeals have been denied without comment. The Bureau notes that quantum entanglement does not transmit information and has rejected 41,000 appeals citing it, several from physicists who should know better.</p>
+    </details>
+    <details>
+      <summary>My cloud provider advertises "ultra-low latency". Is that a violation?</summary>
+      <p>Marketing operates under a separate and more permissive physics. As long as the actual measured number respects Statute 299,792,458, the adjectives may do as they please.</p>
+    </details>
+    <details>
+      <summary>Why is the minimum computed at two thirds of light speed?</summary>
+      <p>The refractive index of optical fiber is about 1.5, so light in glass covers roughly 200 kilometers per millisecond. Hollow-core fiber and microwave links can do better, which is why high-frequency traders build them. The Bureau monitors these actors closely, in the sense of reading about them.</p>
+    </details>
+    <details>
+      <summary>What should I do if my ping is high?</summary>
+      <p>First, check whether you are far away. This is the leading cause of distance.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="doc">DOC: BEI-010 · REV 1.0 / FINAL / EFFECTIVE RETROACTIVELY TO T=0</div>
+    <p>The Bureau of Latency Enforcement is a division of <a href="https://besteffortindustries.com">Best Effort Industries</a>. It enforces nothing, as nothing requires enforcement. Calculations use great-circle distance and an assumed propagation speed of 200,000 km/s; real routes are longer, and real equipment adds delay the Bureau describes as "administrative processing".</p>
+    <p>© SINCE THE BIG BANG · BUREAU OF LATENCY ENFORCEMENT · ARRIVE WHEN YOU CAN, NOT BEFORE</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var CITIES = [
+    ["Amsterdam",52.37,4.90],["Auckland",-36.85,174.76],["Bangalore",12.97,77.59],
+    ["Beijing",39.90,116.41],["Berlin",52.52,13.41],["Buenos Aires",-34.60,-58.38],
+    ["Cairo",30.04,31.24],["Chicago",41.88,-87.63],["Copenhagen",55.68,12.57],
+    ["Dubai",25.20,55.27],["Frankfurt",50.11,8.68],["Hong Kong",22.32,114.17],
+    ["Honolulu",21.31,-157.86],["Johannesburg",-26.20,28.05],["London",51.51,-0.13],
+    ["Los Angeles",34.05,-118.24],["Madrid",40.42,-3.70],["Mexico City",19.43,-99.13],
+    ["Mumbai",19.08,72.88],["New York",40.71,-74.01],["Paris",48.86,2.35],
+    ["Reykjavik",64.15,-21.94],["San Francisco",37.77,-122.42],["Seattle",47.61,-122.33],
+    ["Seoul",37.57,126.98],["Singapore",1.35,103.82],["Stockholm",59.33,18.07],
+    ["Sydney",-33.87,151.21],["São Paulo",-23.55,-46.63],["Tokyo",35.68,139.69],
+    ["Toronto",43.65,-79.38],["us-east-1 (Ashburn, VA)",39.04,-77.49]
+  ];
+  var selA = document.getElementById('cityA'), selB = document.getElementById('cityB');
+  CITIES.forEach(function(c,i){
+    var oA=document.createElement('option'); oA.value=i; oA.textContent=c[0]; selA.appendChild(oA);
+    var oB=document.createElement('option'); oB.value=i; oB.textContent=c[0]; selB.appendChild(oB);
+  });
+  selA.value = CITIES.findIndex(function(c){return c[0]==='Copenhagen'});
+  selB.value = CITIES.findIndex(function(c){return c[0]==='us-east-1 (Ashburn, VA)'});
+
+  var lastMin = null;
+  function hav(a,b){
+    var R=6371, rad=Math.PI/180;
+    var dLat=(b[1]-a[1])*rad, dLon=(b[2]-a[2])*rad;
+    var s=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(a[1]*rad)*Math.cos(b[1]*rad)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return 2*R*Math.asin(Math.sqrt(s));
+  }
+  function fmt(n,d){return n.toLocaleString('en-US',{maximumFractionDigits:d===undefined?1:d})}
+
+  function rule(){
+    var a=CITIES[+selA.value], b=CITIES[+selB.value];
+    var d=hav(a,b);
+    var minRtt = 2*d/200;           // ms, fiber at ~200 km/ms
+    var typRtt = minRtt*2.1 + 5;    // route inefficiency + equipment
+    lastMin = minRtt;
+    document.getElementById('rDist').textContent = fmt(d,0)+' km';
+    document.getElementById('rMin').textContent = d===0 ? '0 ms' : fmt(minRtt)+' ms';
+    document.getElementById('rTyp').textContent = d===0 ? 'ask your OS' : '~'+fmt(typRtt,0)+' ms';
+    var note;
+    if(d===0){
+      note = 'Endpoints are identical. The minimum lawful latency is zero, which your machine will still fail to achieve. This is legal, merely disappointing.';
+    } else {
+      note = 'Ruling: no round trip between '+a[0]+' and '+b[0]+' may complete in under '+fmt(minRtt)+' ms over fiber. The gap between the minimum and the typical figure is not a violation. It is geography, routing, and equipment, in that order of blame.';
+    }
+    document.getElementById('rNote').textContent = note;
+    document.getElementById('ruling').classList.add('show');
+    document.getElementById('auditVerdict').className='verdict';
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', rule);
+
+  document.getElementById('auditBtn').addEventListener('click', function(){
+    if(lastMin===null) rule();
+    var v = parseFloat(document.getElementById('claimed').value);
+    var out = document.getElementById('auditVerdict');
+    if(isNaN(v)){ out.className='verdict bad'; out.innerHTML='<b>Claim rejected</b>No number supplied. The Bureau cannot audit vibes.'; return; }
+    var a=CITIES[+selA.value][0], b=CITIES[+selB.value][0];
+    if(v < lastMin){
+      var seed=0,s=a+b+v; for(var i=0;i<s.length;i++){seed=(seed*31+s.charCodeAt(i))>>>0;}
+      out.className='verdict bad';
+      out.innerHTML='<b>VIOLATION FOUND · CITATION BLE-'+String(seed%100000).padStart(5,'0')+'</b>'
+        +'A claimed RTT of '+v+' ms between '+a+' and '+b+' is below the physical minimum of '+fmt(lastMin)+' ms. '
+        +'This packet did not travel through fiber. It traveled through marketing. The claimant is cited for benchmarketing in the first degree and sentenced to reproduce the result while being watched.';
+    } else if(v < lastMin*1.4){
+      out.className='verdict ok';
+      out.innerHTML='<b>Lawful, suspiciously excellent</b>This claim is physically possible but within 40 percent of the theoretical floor, a region occupied almost exclusively by high-frequency traders and people measuring the wrong thing. The Bureau accepts the claim and raises an eyebrow.';
+    } else {
+      out.className='verdict ok';
+      out.innerHTML='<b>Lawful</b>This claim comfortably respects the speed of light. No further action. The Bureau thanks the claimant for their honesty, or their adequate infrastructure, whichever applies.';
+    }
+  });
+})();
+</script>
+</body>
+</html>

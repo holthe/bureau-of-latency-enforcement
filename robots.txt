@@ -1,0 +1,8 @@
+# Crawl freely. The Bureau regulates how fast you may arrive,
+# not whether you are welcome. You are, at up to 200 km/ms.
+
+User-agent: *
+Allow: /
+
+# There is no sitemap. There is one page and a 404.
+# Crawl-delay is not specified; physics already provides one.

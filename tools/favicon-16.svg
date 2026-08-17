@@ -1,0 +1,8 @@
+<!-- Pixel-grid 16px icon, used only for the smallest favicon.ico entry.
+     The shield survives 16 pixels; the gauge does not, so the small badge
+     is the shield with the red enforcement band and nothing else. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+  <rect width="16" height="16" fill="#171d26"/>
+  <polygon points="2,2 14,2 14,9 8,15 2,9" fill="#b9962e"/>
+  <rect x="2" y="4" width="12" height="2" fill="#a51c1c"/>
+</svg>
