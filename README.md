@@ -81,7 +81,7 @@ is an inline image embedded in `index.html`, not a separate asset.
 
 ### The production domain
 
-The site is served at `latencyenforcement.pages.dev`, and that is the host every absolute
+The site is served at `latency.besteffortindustries.com`, and that is the host every absolute
 URL on the page points at, so link previews resolve. `latencyenforcement.org` remains
 the candidate domain and has not been purchased; if the site is
 promoted, either to that domain or to a subdomain of the parent
@@ -198,14 +198,14 @@ registered:
    Pages** -> `latencyenforcement` -> **Custom domains** -> **Set up a
    custom domain**. Because the zone is on Cloudflare, the required CNAME
    record (apex, flattened, proxied, pointing at
-   `latencyenforcement.pages.dev`) is created for you. **Do not create
+   `latency.besteffortindustries.com`) is created for you. **Do not create
    the record by hand first**; a pre-existing CNAME blocks the flow
    outright.
 3. **Repeat for `www`** if both should resolve.
 4. **Wait for the certificate.** Issuance normally completes within a few
    minutes of the record appearing.
 
-Until then the site is reachable at `latencyenforcement.pages.dev`.
+Until then the site is reachable at `latency.besteffortindustries.com`.
 
 ### Related
 
