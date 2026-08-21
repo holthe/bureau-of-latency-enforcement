@@ -188,7 +188,7 @@
         <div class="rgrid">
           <div><b id="rDist">-</b><span>Great-circle distance</span></div>
           <div><b id="rMin">-</b><span>Minimum lawful RTT</span></div>
-          <div><b id="rTyp">-</b><span>Typical observed RTT</span></div>
+          <div><b id="rTyp">-</b><span>Planning estimate, not measured</span></div>
         </div>
         <p class="rnote" id="rNote"></p>
       </div>
@@ -203,7 +203,7 @@
           </div>
           <button id="auditBtn">Audit claim</button>
         </div>
-        <div class="verdict" id="auditVerdict"></div>
+        <div class="verdict" id="auditVerdict" role="status" aria-live="polite"></div>
       </div>
     </div>
   </div>
@@ -289,7 +289,7 @@
     var a=CITIES[+selA.value], b=CITIES[+selB.value];
     var d=hav(a,b);
     var minRtt = 2*d/200;           // ms, fiber at ~200 km/ms
-    var typRtt = minRtt*2.1 + 5;    // route inefficiency + equipment
+    var typRtt = minRtt*2.1 + 5;    // planning heuristic: route inefficiency + equipment, not measured
     lastMin = minRtt;
     document.getElementById('rDist').textContent = fmt(d,0)+' km';
     document.getElementById('rMin').textContent = d===0 ? '0 ms' : fmt(minRtt)+' ms';
@@ -306,6 +306,18 @@
   }
 
   document.getElementById('calcBtn').addEventListener('click', rule);
+
+  /* changing either endpoint invalidates the standing ruling: an audit that
+     compared a new pair of cities against the previous route's floor would
+     issue citations for latency that was never claimed */
+  function invalidate(){
+    lastMin = null;
+    document.getElementById('ruling').classList.remove('show');
+    document.getElementById('auditVerdict').className = 'verdict';
+    document.getElementById('auditVerdict').innerHTML = '';
+  }
+  selA.addEventListener('change', invalidate);
+  selB.addEventListener('change', invalidate);
 
   document.getElementById('auditBtn').addEventListener('click', function(){
     if(lastMin===null) rule();
